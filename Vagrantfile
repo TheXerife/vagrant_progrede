@@ -11,10 +11,8 @@ Vagrant.configure("2") do |config|
       sudo apt update
       sudo apt install -y isc-dhcp-server
 
-      # Configura a interface
       echo 'INTERFACESv4="eth1"' | sudo tee /etc/default/isc-dhcp-server
 
-      # Configura o DHCP
       sudo bash -c 'cat > /etc/dhcp/dhcpd.conf' <<EOF
 subnet 192.168.56.0 netmask 255.255.255.0 {
   range 192.168.56.100 192.168.56.200;
@@ -34,9 +32,7 @@ EOF
     cli.vm.box = "ubuntu/jammy64"
     cli.vm.hostname = "cliente"
 
-    # Cria interface sem configurar IP automaticamente (sem DHCP do VirtualBox)
     cli.vm.network "private_network", ip: "0.0.0.0", auto_config: false
-
     cli.vm.provision "shell", inline: <<-SHELL
       sudo dhclient -v eth1
     SHELL
