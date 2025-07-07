@@ -58,3 +58,77 @@ Para facilitar o processo de instalação das dependências, criamos um script *
 
 ```bash
 vagrant up
+```
+
+
+## Diagrama de Arquitetura (Ilograph)
+
+Abaixo está o diagrama da arquitetura do projeto representado em **[Ilograph](https://app.ilograph.com/)**
+
+![Texto alternativo](URL-ou-caminho-da-imagem)
+
+```yaml
+resources:
+- name: Vagrant Progrede
+  subtitle: Simulação de rede local
+  color: Navy
+  icon: Networking/cloud-network.svg
+  children:
+    - name: Servidor
+      subtitle: VM com DHCP + Firewall
+      color: RoyalBlue
+      icon: Networking/server.svg
+      children:
+        - name: DHCP
+          subtitle: Serviço de IP Dinâmico
+          icon: Networking/cloud-server.svg
+        - name: Firewall
+          subtitle: Regras de IPTables
+          icon: Networking/firewall.svg
+    - name: Cliente
+      subtitle: VM com IP dinâmico via DHCP
+      color: DarkGreen
+      icon: Networking/workstation.svg
+
+- name: Scripts de Provisionamento
+  subtitle: Arquivos shell usados no setup
+  color: DimGray
+  style: plural
+  icon: Documents/script.svg
+  children:
+    - name: Vagrantfile
+      subtitle: Define rede e VMs
+      icon: Networking/cloud-server.svg
+    - name: firewall.sh
+      subtitle: Aplica regras de firewall
+    - name: dhcp.sh
+      subtitle: Configura o servidor DHCP
+    - name: servidor.sh
+      subtitle: Inicializa o servidor
+    - name: cliente.sh
+      subtitle: Inicializa o cliente
+
+perspectives:
+- name: Fluxo de Rede
+  relations:
+    - from: Cliente
+      to: DHCP
+      label: Solicita IP via DHCP
+    - from: DHCP
+      to: Cliente
+      label: Fornece IP
+    - from: Firewall
+      to: Cliente
+      label: Permite/Deny acesso
+    - from: Vagrantfile
+      to: Servidor, Cliente
+      label: Cria VM e conecta rede
+  notes: |-
+    Este diagrama mostra a arquitetura do projeto `vagrant_progrede`, que simula uma rede local com duas VMs usando Vagrant.
+
+    - O **Cliente** recebe IP dinâmico via **DHCP**.
+    - O **Servidor** aplica regras de firewall via `firewall.sh`.
+    - Todos os scripts são definidos no `Vagrantfile`.
+```
+
+
