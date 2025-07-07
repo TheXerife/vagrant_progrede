@@ -1,0 +1,28 @@
+Vagrant.configure("2") do |config|
+    config.vm.box = "ubuntu/bionic64"
+  
+    # VM Firewall
+    config.vm.define "firewall" do |fw|
+      fw.vm.hostname = "firewall"
+      fw.vm.network "private_network",
+                    ip: "192.168.56.10",
+                    virtualbox__intnet: "rede_interna"
+      fw.vm.provider "virtualbox" do |vb|
+        vb.memory = 1024
+      end
+      fw.vm.provision "shell", path: "scripts/firewall.sh"
+    end
+  
+    # VM Cliente
+    config.vm.define "cliente" do |cli|
+      cli.vm.hostname = "cliente"
+      cli.vm.network "private_network",
+                     virtualbox__intnet: "rede_interna",
+                     type: "dhcp"
+      cli.vm.provider "virtualbox" do |vb|
+        vb.memory = 1024
+      end
+      cli.vm.provision "shell", path: "scripts/cliente.sh"
+    end
+  end
+  
