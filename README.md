@@ -75,7 +75,9 @@ resources:
   icon: Networking/cloud-network.svg
   children:
     - name: Servidor
-      subtitle: VM com DHCP + Firewall
+      subtitle: |
+        VM com DHCP + Firewall  
+        IP fixo: 192.168.56.10
       color: RoyalBlue
       icon: Networking/server.svg
       children:
@@ -86,7 +88,9 @@ resources:
           subtitle: Regras de IPTables
           icon: Networking/firewall.svg
     - name: Cliente
-      subtitle: VM com IP dinâmico via DHCP
+      subtitle: |
+        VM com IP dinâmico via DHCP  
+        Pool DHCP: 192.168.56.100 - 192.168.56.200
       color: DarkGreen
       icon: Networking/workstation.svg
 
@@ -129,6 +133,7 @@ perspectives:
     - O **Cliente** recebe IP dinâmico via **DHCP**.
     - O **Servidor** aplica regras de firewall via `firewall.sh`.
     - Todos os scripts são definidos no `Vagrantfile`.
+
 ```
 
 
