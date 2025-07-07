@@ -1,5 +1,3 @@
-# vagrant_progredes
-
 ## Projeto de Provisionamento com Vagrant e Shell Script
 
 Este projeto demonstra a criação automatizada de duas máquinas virtuais utilizando **Vagrant** e **Shell Script**. As máquinas são configuradas da seguinte forma:
