@@ -12,10 +12,10 @@ Este projeto demonstra a criação automatizada de duas máquinas virtuais usand
 
 Tecnologias Utilizadas
 
- VirtualBox (7.1.10)
- Vagrant (2.4.7)
- Shell Script (provisionamento)
- Ubuntu 18.04 (bionic64)
+ - VirtualBox (7.1.10)
+ - Vagrant (2.4.7)
+ - Shell Script (provisionamento)
+ - Ubuntu 18.04 (bionic64)
 
 
 
@@ -46,6 +46,9 @@ Recebe IP via DHCP
 
 Define o firewall como gateway padrão
 
-Eduarda Thamyres Flores, Gustavo Luiz Xavier
+- Eduarda Thamyres Flores
+- Gustavo Luiz Xavier
+
 Aluno de Redes de Computadores — 2025
+
 Projeto para a disciplina de Programação para Redes
