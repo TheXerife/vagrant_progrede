@@ -1,21 +1,35 @@
-Projeto de Provisionamento com Vagrant e Shell Script
-Este projeto demonstra a criação automatizada de duas máquinas virtuais usando Vagrant e Shell Script:
+# vagrant_progredes
 
-firewall: atua como servidor DHCP e NAT. cliente: recebe IP via DHCP e roteia tráfego pelo firewall.
+# Projeto de Provisionamento com Vagrant e Shell Script
+
+Este projeto demonstra a criação automatizada de duas máquinas virtuais usando **Vagrant** e **Shell Script**:
+
+**firewall**: atua como servidor DHCP e NAT.
+**cliente**: recebe IP via DHCP e roteia tráfego pelo firewall.
+
+
+
 
 Tecnologias Utilizadas
 
-VirtualBox Vagrant Shell Script (provisionamento) Ubuntu 18.04 (bionic64)
+ VirtualBox
+ Vagrant
+ Shell Script (provisionamento)
+ Ubuntu 18.04 (bionic64)
+
+
 
 Como executar
 
-Pré-requisitos:
-Instale o Vagrant
-Instale o VirtualBox
+> **Pré-requisitos:**  
+>  Instale o [Vagrant](https://www.vagrantup.com/)  
+>  Instale o [VirtualBox](https://www.virtualbox.org/)
 
 Depois, abra o terminal na pasta "projetto-iac" e execute:
 
+```bash
 vagrant up
+```
 
 O que é configurado automaticamente
 VM: firewall
