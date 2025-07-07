@@ -65,7 +65,7 @@ vagrant up
 
 Abaixo está o diagrama da arquitetura do projeto representado em **[Ilograph](https://app.ilograph.com/)**
 
-![Texto alternativo](URL-ou-caminho-da-imagem)
+![Diagrama Ilograph](https://raw.githubusercontent.com/TheXerife/vagrant_progrede/main/Ilograph.png)
 
 ```yaml
 resources:
